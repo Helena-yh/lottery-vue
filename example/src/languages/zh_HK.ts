@@ -1,0 +1,108 @@
+import { IRCKitLanguageEntries } from '@rongcloud/global-im-uikit';
+
+export const zhHK: IRCKitLanguageEntries = {
+  'conv.loading.msg': '加載中...',
+  'conv.mentioned.me.msg': '@我',
+  'conv.mentioned.all.msg': '@ALL',
+  'conv.draft.msg': '草稿',
+
+  'message.list.select': '選擇以下信息',
+  'message.list.unselect': '取消選擇',
+  'message.list.recall.by.self': '你删除了一条消息',
+  'message.list.recall.by.other': '{0} 删除了一条消息',
+  'message.list.read': '已讀',
+  'message.list.back': '返回',
+  'message.list.reedit': '重新編輯',
+
+  // 消息类型
+  'message-type.RC:ImgMsg': '[圖片]',
+  'message-type.RC:HQVCMsg': '[語音]',
+  'message-type.RC:VcMsg': '[語音]',
+  'message-type.RC:GIFMsg': '[圖片]',
+  'message-type.RC:FileMsg': '[文件]',
+  'message-type.RC:SightMsg': '[視頻]',
+  'message-type.RC:ImgTextMsg': '[圖文]',
+  'message-type.RC:LBSMsg': '[位置]',
+  'message-type.RC:CombineMsg': '[合並轉發]',
+  'message-type.RC:CombineV2Msg': '[合並轉發]',
+  'message-type.RC:ReferenceMsg': '[引用]',
+  'message-type.unknown': '[不支持的消息类型]',
+
+  // 时间格式
+  'time.format.today': '今天',
+  'time.format.yesterday': '昨天',
+  'time.format.monday': '星期一',
+  'time.format.tueday': '星期二',
+  'time.format.wedday': '星期三',
+  'time.format.thurday': '星期四',
+  'time.format.friday': '星期五',
+  'time.format.satday': '星期六',
+  'time.format.sunday': '星期日',
+  'time.format.full': '{0}/{1}/{2}',
+
+  // 输入框菜单
+  'input.menu.item.photo': '拍照',
+  'input.menu.item.images': '圖片',
+  'input.menu.item.files': '文件',
+  'input.menu.item.emoji': '表情',
+  'input.placeholder': 'Shift + Enter 換行, Enter 發送',
+  'input.reply.prefix': '回復 ',
+  'input.mentioned.all': '所有人',
+  'input.placeholder.search': '搜索',
+
+  'conversation.menu.item.add_top': '置頂',
+  'conversation.menu.item.remove_top': '取消置頂',
+  'conversation.menu.item.mute': '免打擾',
+  'conversation.menu.item.unmute': '取消免打擾',
+  'conversation.menu.item.mark_read': '標記已讀',
+  'conversation.menu.item.mark_unread': '標記未讀',
+  'conversation.menu.item.remove': '刪除',
+
+  'message.menu.item.reply': '回復/引用',
+  'message.menu.item.multi.choice': '多選',
+  'message.menu.item.copy': '複製',
+  'message.menu.item.forward': '轉發',
+  'message.menu.item.delete': '刪除',
+
+  'conversation.empty.desc': '暫無消息',
+  'conversation.list.empty.desc': '暫無对话',
+  'conversation.detail.bar.typing': '对方正在輸入...',
+
+  'alert.req.msg.error': '請求消息失敗: {0}',
+  'alert.pickfiles.maxcount': '最多只能選擇 {0} 個文件',
+  'alert.paste.not.supported': '您的瀏覽器不支持粘貼操作',
+  'alert.delete.message.failed': '刪除消息失敗: {0}',
+  'alert.delete.messages.partial.failure': '刪除 {0} 條消息失敗',
+  'alert.delete.conversation.failed': '刪除會話失敗: {0}',
+  'alert.forward.not.supported': '選中的第 {0} 消息不支持轉發',
+  'alert.forward.over.length': '聊天記錄選擇不能超過 100 條',
+  'alert.send.message.maxcount': '內容超過 {0} 字，請刪除部分內容後再嘗試發送',
+  'alert.message-deleted': '消息被刪除',
+  'alert.conversation.list.not.ready': '會話列表尚未加載完成，請稍後再試',
+
+  'dialog.delete.msg': '確定刪除消息嗎?',
+  'dialog.tips.msg': '提示',
+  'dialog.cancel.msg': '取消',
+  'dialog.confirm.msg': '確認',
+  'dialog.forwarding.msg': '轉發',
+  'dialog.recall.msg': '同時刪除對方的',
+
+  'take-photo.send-btn.label': '發送',
+  'take-photo.cancel-btn.label': '取消',
+  'take-photo.retry-btn.label': '重拍',
+  'take-photo.msg.camera-starting': '相機啟動中...',
+  'take-photo.msg.camera-startup-failure': '相機啟動失敗: {0}',
+
+  'multi-choice.menu.selected-count': '已選擇 {0} 項',
+  'multi-choice.menu.merge-forward': '合併轉發',
+  'multi-choice.menu.forward-item-by-item': '逐條轉發',
+  'multi-choice.menu.delete': '刪除',
+
+  'private.combine-msg.title': '{0} 和 {1} 聊天記錄',
+  'private.combine-msg.signal.title': '{0} 聊天記錄',
+  'group.combine-msg.title': '群聊的聊天記錄',
+
+  'connection.status.suspended': '當前網絡不可用，請檢查網絡',
+  'connection.status.disconnected': '已主動斷開連接',
+  'connection.status.connecting': '連接中...',
+};

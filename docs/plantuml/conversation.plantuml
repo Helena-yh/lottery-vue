@@ -1,0 +1,68 @@
+@startuml conversation-list
+
+participant "IMKit UI" as Kit
+participant ConversationListModule as CM
+participant IMLib as Lib
+
+== 初始化 ==
+
+CM --> Lib: 注册 Conversation 事件通知，以接收置顶、免打扰状态变更通知
+alt Electron
+  CM --> Lib: 注册 Message 事件通知
+end
+
+== 连接成功 ==
+
+CM --> Lib: getTopConversationList()
+note right: 获取本地缓存的置顶列表与会话免打扰状态
+Lib --> CM: arrConversation
+note left: 内存态暂存，不入会话列表，仅作为排序依据
+alt 本地有缓存数据
+  CM --> CM: 根据置顶数据对既有数据进行排序，计算 order 变更
+  CM --> Kit: Events.ORDER_CHANGE 增量通知
+end
+
+loop while hasMore
+  CM --> Lib: getConversationList(200)
+  Lib --> CM: arrConversation
+  alt [有置顶数据]
+    CM --> CM: 依据制定数据排序，计算 order 变更
+    CM --> Kit: Events.ORDER_CHANGE 增量通知
+  else [无置顶数据]
+    CM --> CM: 直接按规则入队列
+    CM --> Kit: Events.ORDER_CHANGE 增量通知，数据为 arrConversation
+  end
+end
+
+== Conversation 事件 ==
+
+Lib --> CM: Conversation 事件
+note right
+1. 会话置顶、免打扰状态变更（Electron 平台遗留 Bug 待处理）
+2. 未读数变更、@信息变更、latestMessage 变更（仅 Web）
+end note
+
+alt 1
+  alt 置顶变更
+    CM --> CM: 变更内存列表排序，计算 order 事件数据
+    CM --> Kit: Events.ORDER_CHANGE 增量通知
+  else 免打扰变更
+    CM --> CM: 更新内存数据状态
+    CM --> Kit: Events.CONVERSATION_ITEM_CHANGE 增量通知
+  end
+else 2
+  alt Web
+    CM --> CM: 更新内存数据状态，计算 order 变更
+    CM --> Kit: Events.ORDER_CHANGE 增量通知
+  end
+end
+
+== Message 事件 ==
+
+alt Electron
+  CM --> Lib: getConversation() 获取当前数据库数据
+  CM --> CM: 更新内存数据状态，计算 order 变更
+  CM --> Kit: Events.ORDER_CHANGE 增量通知
+end
+
+@enduml

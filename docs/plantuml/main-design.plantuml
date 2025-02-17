@@ -1,0 +1,34 @@
+@startuml main-design
+
+rectangle Providers {
+  rectangle Provider
+  rectangle "..." as other
+}
+
+rectangle Component
+
+actor User#lightgreen
+rectangle IMLib
+rectangle RCKitContext
+
+User -right-> Component: 用户 UI 交互
+Component -down-> Provider: UI 事件
+Provider ..> Provider: UI 数据处理
+
+rectangle RCKitModule#lightgrey
+rectangle App #lightgreen
+rectangle RCKitApplication
+
+IMLib -up-o RCKitContext: IMLib 接口集成
+RCKitContext .up.o Provider
+RCKitContext .up.o other
+Provider .up.> Component: props 变更赋值
+Component ..> Component: 根据 props 渲染 UI
+
+RCKitModule o.left. RCKitContext
+RCKitModule ..> RCKitModule: 业务逻辑处理
+
+App o-right- RCKitApplication: 开发者集成
+RCKitApplication o.right. RCKitContext
+
+@enduml

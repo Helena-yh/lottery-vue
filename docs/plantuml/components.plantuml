@@ -1,0 +1,87 @@
+@startmindmap components
+
+* 示例：Provider 含业务容器组件
+*[#LightBlue] 示例：无状态 UI 组件
+*[#LightYellow] 示例：无状态 UI 复用组件
+
+* 应用上导航组件（可选，独立提供）
+**[#LightBlue] 左容器占位组件
+** 中容器组件
+***[#LightBlue] 搜索框
+***[#LightBlue] 创建按钮
+**[#LightBlue] 右容器占位组件
+
+* 会话列表
+** 置顶列表
+***[#LightBlue] 置顶会话单项组件
+****[#LightYellow] 会话名称组件
+****[#LightYellow] 会话头像组件
+****[#LightYellow] 在线标识
+** 标签选择器
+***[#LightBlue] 标签展开按钮
+***[#LightBlue] 标签展示条
+****[#LightBlue] 标签组件
+** 在线状态异常提示条
+** 弹窗选择器列表
+***[#LightBlue] 标签单项组件
+**[#LightBlue] 会话列表单项组件
+***[#LightYellow] 会话名称组件
+***[#LightYellow] 会话头像组件
+***[#LightYellow] 在线标识
+***[#LightBlue] (免打扰标识)
+***[#LightBlue] (@标识)
+***[#LightBlue] (时间显示组件)
+***[#LightBlue] (未读数组件)
+***[#LightBlue] (上行消息状态标识)
+** 会话菜单
+*** 置顶
+****[#LightBlue] 置顶按钮
+*** 删除
+****[#LightBlue] 删除按钮
+*** 其他依赖 Server，暂不实现
+
+* 会话窗口
+**[#LightBlue] 会话导航条
+***[#LightYellow] 会话名称组件
+***[#LightYellow] 会话头像组件
+***[#LightYellow] 在线标识
+***[#LightBlue] 群组会话人数组件
+**[#LightBlue] (连接状态提示条组件)
+** 消息列表
+*** 消息单项结构组件
+****[#LightYellow] 会话名称组件
+****[#LightYellow] 会话头像组件
+****[#LightBlue] (消息内容组件，按消息类型分别展示)
+****[#LightBlue] (时间显示组件)
+****[#LightBlue] (上行消息状态组件)
+****[#LightBlue] 多选框
+***[#LightBlue] (灰条提示消息组件)
+***[#LightBlue] (时间分割线组件)
+*** 消息菜单
+**** 转发
+*****[#LightBlue] 转发
+**** 引用/回复
+*****[#LightBlue] 引用/回复
+**** 复制
+*****[#LightBlue] 复制
+**** 撤回/删除
+*****[#LightBlue] 撤回/删除
+****[#LightGray] 自定义注入组件
+
+* 消息编辑区
+**[#LightBlue] 工具条
+*** 图片选择器
+****[#LightBlue] 图片选择器按钮
+*** 文件选择器
+****[#LightBlue] 文件选择器按钮
+*** 表情选择器
+****[#LightBlue] 表情选择器按钮
+***[#LightBlue] 占位容器
+** 引用/回复消息展示组件
+***[#LightBlue] 引用/回复消息展示组件
+** Input 组件
+***[#LightBlue] Input 组件
+** 发送按钮组件
+***[#LightBlue] 发送按钮
+
+@endmindmap

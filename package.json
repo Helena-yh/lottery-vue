@@ -1,0 +1,66 @@
+{
+  "name": "global-im-uikit",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "husky install",
+    "build:apidoc": "typedoc",
+    "build:demo": "vite build -c vite-example.config.ts",
+    "build": "vue-tsc -p tsconfig.lib.json --noEmit && vite build",
+    "release": "vue-tsc -p tsconfig.lib.json --noEmit && MODE=production npm run build",
+    "dev": "vue-tsc -p tsconfig.lib.json --noEmit && vite -c vite-example.config.ts",
+    "lint": "vue-tsc -p tsconfig.lib.json --noEmit && eslint --ext .js,.ts,.vue .",
+    "fix": "npm run lint -- --fix",
+    "upload:file": "node scripts/qiniu/upload-file.js",
+    "upload:dir": "node scripts/qiniu/upload-dir.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "lint-staged": {
+    "*.(js|ts|vue)": [
+      "npm run lint"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@element-plus/icons-vue": "^2.1.0",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@rollup/plugin-replace": "^2.3.4",
+    "@rollup/plugin-typescript": "^8.1.0",
+    "@types/node": "^18.14.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "element-plus": "^2.3.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "pako": "^2.0.4",
+    "qiniu": "^7.3.3",
+    "rollup": "^2.35.1",
+    "rollup-plugin-dts": "^2.0.1",
+    "sass": "^1.59.3",
+    "typedoc": "^0.22.18",
+    "typedoc-theme-category": "^1.0.7",
+    "typescript": "~4.6.2",
+    "vite": "^4.1.4",
+    "vite-plugin-raw": "^1.0.3",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6",
+    "vue-tsc": "^1.2.0"
+  },
+  "dependencies": {
+    "@rongcloud/engine": "^5.9.7",
+    "@rongcloud/imlib-next": "^5.9.7"
+  }
+}

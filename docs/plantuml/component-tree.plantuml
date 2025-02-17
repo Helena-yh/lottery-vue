@@ -1,0 +1,65 @@
+@startmindmap components-tree
+
+* <rc-imkit-app-provider>
+** <rc-conversation-list-container-provider>
+***[#Grey] <rc-top-list-provider>
+***[#Grey] <rc-conversation-filter-provider>
+*** <rc-conversation-list-provider>
+**** <rc-scrollbar-provider>
+***** <rc-scrollbar-thumb-provider>
+*****[#LightBlue] [slot #default]
+******[#LightBlue] <rc-conversation-list-menu-item>
+******[#LightBlue] <rc-conversation-list-item>
+*******[#LightBlue] <rc-icon>
+*******[#LightBlue] <rc-conversation-label>
+*******[#LightBlue] <rc-icon-notification>
+*******[#LightBlue] <rc-icon-top>
+*******[#LightBlue] <rc-conversation-time>
+*******[#LightBlue] <rc-conversation-latest-message>
+*******[#LightBlue] <rc-message-sent-status>
+*******[#LightBlue] <rc-conversation-unread>
+******[#LightBlue] <rc-conversation-loading>
+****[#LightBlue] <rc-conversation-list-empty>
+** <rc-conversation-detail-provider>
+***[#LightBlue] <rc-connection-status>
+***[#LightBlue] <rc-connection-empty>
+*** <rc-conversation-detail-bar-provider>
+*** <rc-take-photo-provider>
+*** <rc-message-list-provider>
+**** <rc-scrollbar-thumb-provider>
+****[#LightBlue] <rc-message-list-menu-item>
+**** <rc-scrollbar-provider>
+*****[#LightBlue] [slot #default]
+******[#LightBlue] <rc-icon>
+****[#LightBlue] <rc-message-select>
+****[#LightBlue] <rc-message-time>
+**** <rc-grey-message-provider>
+****[#LightBlue] <rc-icon>
+****[#LightBlue] <rc-message-bubble>
+*****[#LightBlue] <rc-message-sent-status>
+*****[#LightBlue] [slot #default]
+******[#LightBlue] <rc-text-message>
+******[#LightBlue] <rc-image-message>
+*******[#LightBlue] <rc-message-progress-btn>
+********[#LightBlue] [slot #default]
+********[#LightBlue] [slot #marked]
+******[#LightBlue] <rc-sight-message>
+*******[#LightBlue] <rc-message-progress-btn>
+********[#LightBlue] [slot #default]
+********[#LightBlue] [slot #marked]
+******[#LightBlue] <rc-file-message>
+*******[#LightBlue] <rc-message-progress-btn>
+********[#LightBlue] [slot #default]
+********[#LightBlue] [slot #marked]
+******[#LightBlue] <rc-reference-message>
+******[#LightBlue] <rc-combine-v2-message>
+****** <rc-audio-player-privider>
+*******[#LightBlue] <rc-hq-voice-message>
+******[#LightBlue] <rc-gif-message>
+*** <rc-input-provider>
+**** <rc-emoji-panel-provider>
+**** <rc-at-users-panel-provider>
+****[#LightBlue] <rc-input-reply-bar>
+*** <rc-multi-choice-menu-provider>
+****[#LightBlue] <rc-multi-choice-menu>
+@endmindmap
